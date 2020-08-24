@@ -1,25 +1,11 @@
 //
-//  ContentView.swift
+//  ProfileInfoHeaderView.swift
 //  Sticky Header
 //
 //  Created by Marlon Raskin on 8/23/20.
 //
 
 import SwiftUI
-
-struct StickyHeaderView: View {
-    var body: some View {
-		ProfileInfoHeaderView(name: "Marlon Raskin")
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        StickyHeaderView()
-    }
-}
-
-
 
 struct ProfileInfoHeaderView: View {
 
@@ -36,12 +22,18 @@ struct ProfileInfoHeaderView: View {
 
 			VStack(alignment: .leading) {
 				Text("Article Written By")
-					.font(.custom("Avenir Next", size: 12))
+					.font(.avenirNext(size: 12))
 					.foregroundColor(.gray)
 
 				Text(name)
-					.font(.custom("Avenir Next", size: 17))
+					.font(.avenirNext(size: 17))
 			}
 		}
 	}
+}
+
+struct ProfileInfoHeaderView_Previews: PreviewProvider {
+    static var previews: some View {
+        ProfileInfoHeaderView(name: "name")
+    }
 }

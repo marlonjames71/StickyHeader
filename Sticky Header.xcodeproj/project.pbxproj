@@ -8,18 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		372593CE24F31A1800DE6107 /* Sticky_HeaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372593CD24F31A1800DE6107 /* Sticky_HeaderApp.swift */; };
-		372593D024F31A1800DE6107 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372593CF24F31A1800DE6107 /* ContentView.swift */; };
+		372593D024F31A1800DE6107 /* StickyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372593CF24F31A1800DE6107 /* StickyHeaderView.swift */; };
 		372593D224F31A1A00DE6107 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 372593D124F31A1A00DE6107 /* Assets.xcassets */; };
 		372593D524F31A1A00DE6107 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 372593D424F31A1A00DE6107 /* Preview Assets.xcassets */; };
+		37D31FA524F32A51004E3B2A /* LoremIpsum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D31FA424F32A51004E3B2A /* LoremIpsum.swift */; };
+		37D31FA724F3374A004E3B2A /* ArticleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D31FA624F3374A004E3B2A /* ArticleListView.swift */; };
+		37DE21E824F3382F00244B37 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DE21E724F3382F00244B37 /* ArticleCell.swift */; };
+		37EBDF8F24F3264D0070431D /* Font+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EBDF8E24F3264D0070431D /* Font+Ext.swift */; };
+		37EBDF9124F327660070431D /* ProfileInfoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EBDF9024F327660070431D /* ProfileInfoHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		372593CA24F31A1800DE6107 /* Sticky Header.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sticky Header.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		372593CD24F31A1800DE6107 /* Sticky_HeaderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sticky_HeaderApp.swift; sourceTree = "<group>"; };
-		372593CF24F31A1800DE6107 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		372593CF24F31A1800DE6107 /* StickyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderView.swift; sourceTree = "<group>"; };
 		372593D124F31A1A00DE6107 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		372593D424F31A1A00DE6107 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		372593D624F31A1A00DE6107 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37D31FA424F32A51004E3B2A /* LoremIpsum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoremIpsum.swift; sourceTree = "<group>"; };
+		37D31FA624F3374A004E3B2A /* ArticleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListView.swift; sourceTree = "<group>"; };
+		37DE21E724F3382F00244B37 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
+		37EBDF8E24F3264D0070431D /* Font+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Ext.swift"; sourceTree = "<group>"; };
+		37EBDF9024F327660070431D /* ProfileInfoHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,9 +62,10 @@
 		372593CC24F31A1800DE6107 /* Sticky Header */ = {
 			isa = PBXGroup;
 			children = (
-				372593CD24F31A1800DE6107 /* Sticky_HeaderApp.swift */,
-				372593CF24F31A1800DE6107 /* ContentView.swift */,
+				37EBDF8D24F31DBE0070431D /* Styles and Helpers */,
+				37EBDF8C24F31DA50070431D /* Views and Screens */,
 				372593D124F31A1A00DE6107 /* Assets.xcassets */,
+				372593CD24F31A1800DE6107 /* Sticky_HeaderApp.swift */,
 				372593D624F31A1A00DE6107 /* Info.plist */,
 				372593D324F31A1A00DE6107 /* Preview Content */,
 			);
@@ -67,6 +78,34 @@
 				372593D424F31A1A00DE6107 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		37D31FA824F33753004E3B2A /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				37EBDF9024F327660070431D /* ProfileInfoHeaderView.swift */,
+				37DE21E724F3382F00244B37 /* ArticleCell.swift */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
+		37EBDF8C24F31DA50070431D /* Views and Screens */ = {
+			isa = PBXGroup;
+			children = (
+				37D31FA624F3374A004E3B2A /* ArticleListView.swift */,
+				372593CF24F31A1800DE6107 /* StickyHeaderView.swift */,
+				37D31FA824F33753004E3B2A /* Supporting */,
+			);
+			path = "Views and Screens";
+			sourceTree = "<group>";
+		};
+		37EBDF8D24F31DBE0070431D /* Styles and Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				37EBDF8E24F3264D0070431D /* Font+Ext.swift */,
+				37D31FA424F32A51004E3B2A /* LoremIpsum.swift */,
+			);
+			path = "Styles and Helpers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +177,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				372593D024F31A1800DE6107 /* ContentView.swift in Sources */,
+				37D31FA524F32A51004E3B2A /* LoremIpsum.swift in Sources */,
+				37D31FA724F3374A004E3B2A /* ArticleListView.swift in Sources */,
+				372593D024F31A1800DE6107 /* StickyHeaderView.swift in Sources */,
 				372593CE24F31A1800DE6107 /* Sticky_HeaderApp.swift in Sources */,
+				37DE21E824F3382F00244B37 /* ArticleCell.swift in Sources */,
+				37EBDF8F24F3264D0070431D /* Font+Ext.swift in Sources */,
+				37EBDF9124F327660070431D /* ProfileInfoHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
