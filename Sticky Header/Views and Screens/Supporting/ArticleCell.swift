@@ -21,6 +21,7 @@ struct ArticleCell: View {
 					.frame(width: reader.size.width - 32, height: 200, alignment: .center)
 					.clipped()
 					.cornerRadius(16)
+					.matchedGeometryEffect(id: "headerPhoto", in: headerPhoto)
 
 				HStack {
 					Text("How to build a parallax scroll view")
@@ -30,6 +31,7 @@ struct ArticleCell: View {
 						.padding(.horizontal, 6)
 						.background(Color.black.opacity(0.6))
 						.clipShape(Capsule())
+						.matchedGeometryEffect(id: "title", in: title)
 					Spacer()
 				}
 				.padding(.horizontal, 20)

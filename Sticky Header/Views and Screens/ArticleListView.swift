@@ -12,19 +12,24 @@ struct ArticleListView: View {
 	@State private var showStickyHeaderView: Bool = false
 
     var body: some View {
-		ScrollView(.vertical, showsIndicators: true, content: {
-			VStack {
-				ForEach(0..<15) { _ in
-					ArticleCell()
-						.onTapGesture(perform: {
-							showStickyHeaderView = true
-						})
-						.sheet(isPresented: $showStickyHeaderView, content: {
-							StickyHeaderView()
-						})
+		ZStack {
+			ScrollView(.vertical, showsIndicators: true, content: {
+				VStack {
+					ForEach(0..<15) { _ in
+						ArticleCell()
+							.onTapGesture(perform: {
+								withAnimation {
+									showStickyHeaderView = true
+								}
+							})
+					}
 				}
+			})
+
+			if showStickyHeaderView {
+				StickyHeaderView()
 			}
-		})
+		}
     }
 }
 

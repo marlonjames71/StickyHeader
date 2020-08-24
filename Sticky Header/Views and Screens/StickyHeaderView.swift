@@ -8,6 +8,13 @@
 import SwiftUI
 
 struct StickyHeaderView: View {
+
+	@Namespace var headerPhoto
+	@Namespace var title
+
+	private let imageHeight: CGFloat = 400
+	private let collapsedImageHeight: CGFloat = 75
+
     var body: some View {
 		ScrollView {
 			GeometryReader { reader in
@@ -15,9 +22,9 @@ struct StickyHeaderView: View {
 					.resizable()
 					.scaledToFill()
 					.frame(width: reader.size.width, height: getHeightForHeaderImage(reader))
-					.blur(radius: getBlurRadiusForImage(reader))
 					.clipped()
 					.offset(x: 0, y: getOffsetForHeaderImage(reader))
+					.matchedGeometryEffect(id: "headerPhoto", in: headerPhoto)
 			}.frame(height: 400)
 
 			VStack(alignment: .leading, spacing: 10) {
@@ -28,6 +35,7 @@ struct StickyHeaderView: View {
 					.foregroundColor(.secondary)
 				Text("How to build a parallax scroll view")
 					.font(.avenirNext(size: 28))
+					.matchedGeometryEffect(id: "title", in: title)
 
 				Text(String.loremIpsum)
 					.lineLimit(nil)
