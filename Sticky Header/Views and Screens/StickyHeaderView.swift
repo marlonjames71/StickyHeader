@@ -9,9 +9,6 @@ import SwiftUI
 
 struct StickyHeaderView: View {
 
-	@Namespace var headerPhoto
-	@Namespace var title
-
 	private let imageHeight: CGFloat = 400
 	private let collapsedImageHeight: CGFloat = 75
 
@@ -31,18 +28,16 @@ struct StickyHeaderView: View {
 						.blur(radius: getBlurRadiusForImage(proxy))
 						.clipped()
 						.background(GeometryGetter(rect: $headerImageRect))
-						.matchedGeometryEffect(id: "headerPhoto", in: headerPhoto)
 
 					Text("How to build a parallax scroll view")
 						.font(.avenirNext(size: 17))
 						.foregroundColor(.white)
 						.offset(x: 0, y: getHeaderTitleOffset())
-//						.opacity(showSmallHeaderTitle ? 1 : 0)
 				}
 				.clipped()
 				.offset(x: 0, y: getOffsetForHeaderImage(proxy))
 			}
-			.frame(height: 400)
+			.frame(height: imageHeight)
 			.zIndex(1)
 
 			VStack(alignment: .leading, spacing: 10) {
@@ -53,8 +48,7 @@ struct StickyHeaderView: View {
 					.foregroundColor(.secondary)
 				Text("How to build a parallax scroll view")
 					.font(.avenirNext(size: 28))
-					.background(GeometryGetter(rect: $headerImageRect))
-					.matchedGeometryEffect(id: "title", in: title)
+					.background(GeometryGetter(rect: $titleRect))
 
 				Text(String.loremIpsum)
 					.lineLimit(nil)
@@ -79,7 +73,6 @@ struct StickyHeaderView: View {
 
 		if offset < -sizeOffscreen {
 			let imageOffset = abs(min(-sizeOffscreen, offset))
-//			showSmallHeaderTitle = true
 			return imageOffset - sizeOffscreen
 		}
 
@@ -88,7 +81,6 @@ struct StickyHeaderView: View {
 			return -offset
 		}
 
-//		showSmallHeaderTitle = false
 		return 0
 	}
 
@@ -114,11 +106,9 @@ struct StickyHeaderView: View {
 			let percentage = max(-1, (currentYValue - maxYValue) / (maxYValue - minYValue))
 			let finalOffset: CGFloat = -30.0
 
-//			showSmallHeaderTitle = true
 			return 20 - (percentage * finalOffset)
 		}
 
-//		showSmallHeaderTitle = false
 		return .infinity
 	}
 
